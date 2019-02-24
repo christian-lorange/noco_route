@@ -6,6 +6,10 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBikdMuIl6ZeY8jyWWZ3c31JZMynGUWSqQ">//AIzaSyBikdMuIl6ZeY8jyWWZ3c31JZMynGUWSqQ</script> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+
+
+
+
 <script type="text/javascript">
 var map;
 var directionsDisplay;
@@ -910,17 +914,38 @@ x.remove(x.selectedIndex);
 }
 
 
+// Accordion
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
 
 </script>
 
 </head>
 <body>
 <div>
+<h2>NoCo Drinking Route Optimizer</h2>
+
+
   <div id="map-canvas" style="width:100vw; height:50vh;"></div>
 
-  <br><br><br>
-
-  
+  <br> 
   
   <div id="add_address">
   <input id="address" type="textbox" value="Fort Collins, CO">
@@ -1075,8 +1100,12 @@ function addmarker(latlng) {
   <div class="hr vpad"></div>
   <div>
     <table id="options_table">
+         <tr >
+            <td>Destinations Count: (maximum of nine)</td>
+            <td id="destinations-count">0</td>
+        </tr>
         <tr>
-            <td colspan="2"><b>Configuration</b></td>
+            <td colspan="2"><b>Route Options</b></td>
         </tr>
         <tr>
             <td>Travel Mode: </td>
@@ -1165,11 +1194,7 @@ function addmarker(latlng) {
         <tr style="display: none">
             <td colspan="2"><b>Debug Info</b></td>
         </tr>
-        <tr >
-            <td>Destinations Count: </td>
-            <td id="destinations-count">0</td>
-            <td id="venue_options_max" style="display: none;">You have added the maximum number of locations possible</td>
-        </tr>
+       
         <tr class="ga-info" style="display:none;">
             <td style="display:none;">Generations: </td><td style="display:none;" id="generations-passed">0</td>
         </tr>
@@ -1180,12 +1205,15 @@ function addmarker(latlng) {
             <td colspan="2"></td>
         </tr>
     </table>
+    <p id="venue_options_max" style="display: none;">You have added the maximum number of locations possible</p>
   </div>
 </div>
 
-<h2>About the NoCo Drinking Route Optimizer</h2>
-  <p>The app provides you with the most efficient route of getting between breweries, cideries, and distilleries around Fort Collins. You can currently select up to nine locations to be included in your route; this includes your starting/ending location. You can choose to travel either by car or bicycle. The optimization is based upon time and distance.</p>
+
+<h3>Learn More</h3>
+                  <p>The app provides you with the most efficient route of getting between breweries, cideries, and distilleries around Fort Collins. You can currently select up to nine locations to be included in your route; this includes your starting/ending location. You can choose to travel either by car or bicycle. The optimization is based upon time and distance.</p>
   <p>You will start by setting where you want to start your route. This will also be your ending location. Once your starting/ending location is set-up you can select the locations you want to include on your route.</p>
+
 
 <!-- Change Text in Directions -->
 <script>        
