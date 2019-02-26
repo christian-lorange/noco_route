@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 
+ <script src="js/admob2.js"></script>
+ <script src="js/main.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBikdMuIl6ZeY8jyWWZ3c31JZMynGUWSqQ">//AIzaSyBikdMuIl6ZeY8jyWWZ3c31JZMynGUWSqQ</script> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
 
@@ -460,6 +462,9 @@ $(document).ready(function() {
 
     // Start GA
     $('#find-route').click(function() {
+
+    	ad_show();
+
         if (nodes.length < 2) {
             if (prevNodes.length >= 2) {
                 nodes = prevNodes;
@@ -961,7 +966,7 @@ for (i = 0; i < acc.length; i++) {
   
 <!--Search panel for venues -->
 <select name="report_type" id="venue_options" onchange="addmarker(this.value);nameslist(this[selectedIndex].id);removeselecter()" style="display: none;">
-<option value="full_history">Locations</option>
+<option value="full_history">Locations<i class="fas fa-chevron-circle-down" style="float: right;"></i></option>
 <option value="40.6202,-105.00594" id="Anheuser-Busch Inc - Fort Collins">Anheuser-Busch Inc - Fort Collins</option>
 <option value="40.30443,-105.084847" id="Berthoud Brewing Company">Berthoud Brewing Company</option>
 <option value="40.40787,-105.11446" id="Big Beaver Brewing Co">Big Beaver Brewing Co</option>
@@ -1026,6 +1031,8 @@ for (i = 0; i < acc.length; i++) {
 <option value="40.52277,-105.07859" id="Zwei Brewing Co">Zwei Brewing Co</option>
            
 </select>
+
+
 
 
 
@@ -1215,6 +1222,11 @@ function addmarker(latlng) {
   <p>You will start by setting where you want to start your route. This will also be your ending location. Once your starting/ending location is set-up you can select the locations you want to include on your route.</p>
 
 
+
+<a href="http://onelink.to/683r2b" target="_blank"><h2>Front Range Happy Hours</h2>
+<p>Find happy hour deals for these locations and many others using the HHAp Apps. Available for iOS and Android</p>
+<img src="logo_ios.png" style="text-align: center; width: 30vw;"></a>
+
 <!-- Change Text in Directions -->
 <script>        
 function changetext(names_incoming){
@@ -1247,6 +1259,10 @@ console.log('test')
     document.getElementById('directionspanel').innerHTML = "";
 }
 </script>
+
+ <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/admob2.js"></script>
+<script type="text/javascript" src="phonegap.js"></script>
 
 
 </body>
