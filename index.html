@@ -611,7 +611,7 @@ var ga = {
     "populationSize": 50,
     "tournamentSize": 5,
     "elitism": true,
-    "maxGenerations": 25,
+    "maxGenerations": 5,
 
     "tickerSpeed": 60,
 
@@ -621,7 +621,7 @@ var ga = {
         ga.mutationRate = parseFloat($('#mutation-rate').val());
         ga.populationSize = parseInt($('#population-size').val()) || 50;
         ga.elitism = parseInt($('#elitism').val()) || false;
-        ga.maxGenerations = parseInt($('#maxGenerations').val()) || 25;
+        ga.maxGenerations = parseInt($('#maxGenerations').val()) || 5;
     },
 
     // Evolves given population
