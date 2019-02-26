@@ -6,7 +6,7 @@
         id        = "com.orangehousenocoroute.app"
         version   = "1.0.1">
 
-    <name>NoCo Drinking Route Optimizer</name>
+    <name>NoCo Brew Route</name>
 
     <description>
         Optimize your driving and biking routes between breweries, distilleries, wineries, and cideries in Northern Colorado
